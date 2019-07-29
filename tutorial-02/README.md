@@ -6,6 +6,22 @@
 
 큐를 처음 생성 후 **옵션을 변경할 수 없다**.
 
+![Imgur](https://i.imgur.com/dqdygaB.png)
+
+```java
+public class Queue extends AbstractDeclarable {
+    /**
+     * Construct a new queue, given a name and durability flag. The queue is non-exclusive and non auto-delete.
+     *
+     * @param name the name of the queue.
+     * @param durable true if we are declaring a durable queue (the queue will survive a server restart)
+     */
+    public Queue(String name, boolean durable) {
+        this(name, durable, false, false, null);
+    }
+}
+```
+
 ## Prefetch
 
 아무 설정을 하지 않고 기본값을 사용할 경우 아래와 같이 두개의 `Receiver`에 반반씩 나눠서 처리된다.
@@ -78,7 +94,7 @@ instance 2 [x] Done in 1.0s
 
 만약 가져간 데이터 처리 후에 프로세스가 죽어서 `ack`를 큐로 보내지 않으면 이 데이터는 큐에 다시 들어가게 된다.
 
-11건의 데이터중 2개의 데이터를 각각 `Receiver`가 가져가서 아직 완료 신호를 받지 못한 상태이다.
+11건의 데이터 중 2개의 데이터를 각각 `Receiver`가 가져가서 아직 완료 신호를 받지 못한 상태이다.
 
 ![Imgur](https://i.imgur.com/75vFQH1.png)
 
@@ -90,10 +106,9 @@ instance 2 [x] Done in 1.0s
 INFO [      Thread-10] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
 INFO [      Thread-10] o.s.a.r.l.SimpleMessageListenerContainer : Workers not finished.
 WARN [      Thread-10] o.s.a.r.l.SimpleMessageListenerContainer : Closing channel for unresponsive consumer: Consumer@3d1c1d26: tags=[[amq.ctag-Hd9CALLxOX1VFcGCi5kQfQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@7190b6c9 Shared Rabbit Connection: SimpleConnection@6de0ca54 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 57875], acknowledgeMode=AUTO local queue size=0
-INFO [      Thread-10] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-INFO [      Thread-10] o.s.a.r.l.SimpleMessageListenerContainer : Workers not finished.
-WARN [      Thread-10] o.s.a.r.l.SimpleMessageListenerContainer : Closing channel for unresponsive consumer: Consumer@39f5a203: tags=[[amq.ctag-hIPqmN_dKL8XwHEmMuOQMg]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@7190b6c9 Shared Rabbit Connection: SimpleConnection@6de0ca54 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 57875], acknowledgeMode=AUTO local queue size=0
 ```
+
+다시 확인해보면 2건이 복구 되었다.
 
 ![Imgur](https://i.imgur.com/BcdYCLQ.png)
 
