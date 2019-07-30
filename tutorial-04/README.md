@@ -1,8 +1,8 @@
 # Routing
 
-`exchange`에서 `queue`로 내려질 때 `routingKey`를 조건으로 분배를 결정할 수 있다.
-
 ![](https://www.rabbitmq.com/img/tutorials/python-four.png)
+
+`exchange`에서 `queue`로 내려질 때 `routingKey`를 조건으로 분배를 결정할 수 있다.
 
 ```
 instance 2 [x] Received 'Hello to debug 1'

@@ -1,5 +1,7 @@
 # Work queues
 
+![](https://www.rabbitmq.com/img/tutorials/python-two.png)
+
 ## Durable
 
 큐 생성시 `durable`을 `true`로 설정하면 큐 서버가 내려가도 데이터를 잃지 않는다.
