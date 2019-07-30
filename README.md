@@ -13,10 +13,10 @@ These tutorials cover the basics of creating messaging applications using Rabbit
 
 한글 번역판
 
-1. [RabbitMQ Tutorial -1. Producer, Queue, Consumer의 정의와 Message Send & Receive](https://kimseunghyun76.tistory.com/423)
-2. [RabbitMQ Tutorial -2. Work Queues](https://kimseunghyun76.tistory.com/424)
-3. [RabbitMQ Tutorial -3. Publish / Subscribe](https://kimseunghyun76.tistory.com/425)
-4. [RabbitMQ Tutorial -4. Routing](https://kimseunghyun76.tistory.com/426)
+1. [RabbitMQ Tutorial - 1. Producer, Queue, Consumer의 정의와 Message Send & Receive](https://kimseunghyun76.tistory.com/423)
+2. [RabbitMQ Tutorial - 2. Work Queues](https://kimseunghyun76.tistory.com/424)
+3. [RabbitMQ Tutorial - 3. Publish / Subscribe](https://kimseunghyun76.tistory.com/425)
+4. [RabbitMQ Tutorial - 4. Routing](https://kimseunghyun76.tistory.com/426)
 5. [RabbitMQ Tutorial - 5. Topics](https://kimseunghyun76.tistory.com/427)
 6. [RabbitMQ Tutorial - 6. RPC](https://kimseunghyun76.tistory.com/428)
 
